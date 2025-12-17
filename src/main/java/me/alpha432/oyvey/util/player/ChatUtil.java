@@ -1,6 +1,6 @@
 package me.alpha432.oyvey.util.player;
 
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.features.commands.Command;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -11,7 +11,7 @@ public class ChatUtil {
 
     public static void sendMessage(Component message) {
         MutableComponent text = Component.empty();
-        text.append(OyVey.commandManager.getClientMessage()+" ");
+        text.append(Impossible.commandManager.getClientMessage()+" ");
         text.append(message);
         sendSilentMessage(text);
     }

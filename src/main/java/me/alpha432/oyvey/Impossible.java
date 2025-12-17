@@ -9,17 +9,14 @@ import net.minecraft.SharedConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Random;
-
-public class OyVey implements ModInitializer, ClientModInitializer {
-    public static final String NAME = "OyVey";
-    public static final String VERSION = SharedConstants.getCurrentVersion().name();
+public class Impossible implements ModInitializer, ClientModInitializer {
+    public static final String NAME = "Impossible Client v2 | 16.12.2025";
     public static float TIMER = 1f;
 
-    public static final Logger LOGGER = LogManager.getLogger("OyVey");
+    public static final Logger LOGGER = LogManager.getLogger("");
     public static ServerManager serverManager;
     public static ColorManager colorManager;
-    public static RotationManager rotationManager;
+    public static RotateManager rotationManager;
     public static PositionManager positionManager;
     public static HoleManager holeManager;
     public static EventManager eventManager;
@@ -34,7 +31,7 @@ public class OyVey implements ModInitializer, ClientModInitializer {
     public void onInitialize() {
         eventManager = new EventManager();
         serverManager = new ServerManager();
-        rotationManager = new RotationManager();
+        rotationManager = new RotateManager();
         positionManager = new PositionManager();
         friendManager = new FriendManager();
         colorManager = new ColorManager();
@@ -48,9 +45,10 @@ public class OyVey implements ModInitializer, ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        LOGGER.info("Start Client");
         eventManager.init();
         moduleManager.init();
-        hudEditorScreen = new HudEditorScreen();
+        rotationManager.init();
 
         configManager = new ConfigManager();
         configManager.load();

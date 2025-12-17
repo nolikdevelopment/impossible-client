@@ -1,7 +1,7 @@
 package me.alpha432.oyvey.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.Stage;
 import me.alpha432.oyvey.event.impl.TickEvent;
 import me.alpha432.oyvey.event.impl.UpdateWalkingPlayerEvent;
@@ -32,7 +32,7 @@ public class MixinClientPlayerEntity {
     }
     @ModifyExpressionValue(method = "modifyInput", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;isUsingItem()Z"))
     private boolean aVoid(boolean original) {
-        NoSlow noSlow = OyVey.moduleManager.getModuleByClass(NoSlow.class);
+        NoSlow noSlow = Impossible.moduleManager.getModuleByClass(NoSlow.class);
         if (noSlow.isEnabled()) {
             return false;
         }

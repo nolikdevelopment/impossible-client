@@ -1,6 +1,6 @@
 package me.alpha432.oyvey.features.modules.misc;
 
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.features.commands.Command;
 import me.alpha432.oyvey.features.modules.Module;
 import net.minecraft.world.entity.Entity;
@@ -29,12 +29,12 @@ public class MCF extends Module {
         if (!(targetedEntity instanceof Player)) return;
         String name = ((Player) targetedEntity).getGameProfile().name();
 
-        if (OyVey.friendManager.isFriend(name)) {
-            OyVey.friendManager.removeFriend(name);
+        if (Impossible.friendManager.isFriend(name)) {
+            Impossible.friendManager.removeFriend(name);
 
             Command.sendMessage("{red} %s has been unfriended.", name);
         } else {
-            OyVey.friendManager.addFriend(name);
+            Impossible.friendManager.addFriend(name);
             Command.sendMessage("{aqua} %s has been friended.", name);
         }
     }

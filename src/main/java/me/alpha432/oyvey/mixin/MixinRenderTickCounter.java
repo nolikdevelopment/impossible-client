@@ -1,6 +1,6 @@
 package me.alpha432.oyvey.mixin;
 
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import net.minecraft.client.DeltaTracker;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -15,6 +15,6 @@ public class MixinRenderTickCounter {
 
     @Inject(method = "advanceGameTime(J)I", at = @At(value = "FIELD", target = "Lnet/minecraft/client/DeltaTracker$Timer;lastMs:J"))
     public void beginRenderTick(long timeMillis, CallbackInfoReturnable<Integer> cir) {
-        this.deltaTicks *= OyVey.TIMER;
+        this.deltaTicks *= Impossible.TIMER;
     }
 }

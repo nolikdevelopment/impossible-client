@@ -1,6 +1,6 @@
 package me.alpha432.oyvey.features.gui;
 
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.features.Feature;
 import me.alpha432.oyvey.features.gui.items.buttons.ModuleButton;
 import me.alpha432.oyvey.features.modules.Module;
@@ -27,7 +27,7 @@ public class HudEditorScreen extends Screen {
 
     private void load() {
         Widget hud = new Widget("Hud", 50, 50, true);
-        OyVey.moduleManager.stream()
+        Impossible.moduleManager.stream()
                 .filter(m -> m.getCategory() == Module.Category.HUD && !m.hidden)
                 .map(ModuleButton::new)
                 .forEach(hud::addButton);

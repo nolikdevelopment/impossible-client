@@ -1,6 +1,6 @@
 package me.alpha432.oyvey.features.gui;
 
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.features.Feature;
 import me.alpha432.oyvey.features.gui.items.Item;
 import me.alpha432.oyvey.features.gui.items.buttons.ModuleButton;
@@ -49,10 +49,10 @@ public class OyVeyGui extends Screen {
 
     private void load() {
         int x = -84;
-        for (Module.Category category : OyVey.moduleManager.getCategories()) {
+        for (Module.Category category : Impossible.moduleManager.getCategories()) {
             if (category == Module.Category.HUD) continue;
             Widget panel = new Widget(category.getName(), x += 120, 4, true);
-            OyVey.moduleManager.stream()
+            Impossible.moduleManager.stream()
                     .filter(m -> m.getCategory() == category && !m.hidden)
                     .map(ModuleButton::new)
                     .forEach(panel::addButton);

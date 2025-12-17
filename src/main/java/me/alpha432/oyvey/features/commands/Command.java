@@ -1,6 +1,6 @@
 package me.alpha432.oyvey.features.commands;
 
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.features.Feature;
 import me.alpha432.oyvey.util.TextUtil;
 import me.alpha432.oyvey.util.player.ChatUtil;
@@ -27,7 +27,7 @@ public abstract class Command
     }
 
     public static String getCommandPrefix() {
-        return OyVey.commandManager.getPrefix();
+        return Impossible.commandManager.getPrefix();
     }
 
     public abstract void execute(String[] var1);

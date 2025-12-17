@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.features.Feature;
 import me.alpha432.oyvey.features.settings.Bind;
 import me.alpha432.oyvey.features.settings.EnumConverter;
@@ -23,7 +23,7 @@ public class ConfigManager {
     private static final Gson gson = new GsonBuilder()
             .setPrettyPrinting()
             .create();
-    private final List<Jsonable> jsonables = List.of(OyVey.friendManager, OyVey.moduleManager, OyVey.commandManager);
+    private final List<Jsonable> jsonables = List.of(Impossible.friendManager, Impossible.moduleManager, Impossible.commandManager);
 
     @SuppressWarnings({"rawtypes", "unchecked"})
     public static void setValueFromJson(Feature feature, Setting setting, JsonElement element) {
@@ -61,7 +61,7 @@ public class ConfigManager {
                         setting.setValue(new Color(r, g, b, a));
                     }
                 } catch (Exception exception) {
-                    OyVey.LOGGER.error("Error parsing color for: {} : {}", feature.getName(), setting.getName());
+                    Impossible.LOGGER.error("Error parsing color for: {} : {}", feature.getName(), setting.getName());
                 }
             }
             case "Pos" -> {
@@ -74,7 +74,7 @@ public class ConfigManager {
                         setting.setValue(new Vector2f(x, y));
                     }
                 } catch (Exception exception) {
-                    OyVey.LOGGER.error("Error parsing position for: {} : {}", feature.getName(), setting.getName());
+                    Impossible.LOGGER.error("Error parsing position for: {} : {}", feature.getName(), setting.getName());
                 }
             }
             case "Enum" -> {
@@ -86,7 +86,7 @@ public class ConfigManager {
                 }
             }
             default -> {
-                OyVey.LOGGER.error("Unknown Setting type for: {} : {}", feature.getName(), setting.getName());
+                Impossible.LOGGER.error("Unknown Setting type for: {} : {}", feature.getName(), setting.getName());
             }
         }
     }

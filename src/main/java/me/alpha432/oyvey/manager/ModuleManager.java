@@ -18,6 +18,7 @@ import me.alpha432.oyvey.features.modules.player.*;
 import me.alpha432.oyvey.features.modules.render.BlockHighlight;
 import me.alpha432.oyvey.features.modules.render.FOV;
 import me.alpha432.oyvey.features.modules.render.FullBright;
+import me.alpha432.oyvey.features.modules.render.NoRender;
 import me.alpha432.oyvey.util.traits.Jsonable;
 import me.alpha432.oyvey.util.traits.Util;
 
@@ -45,6 +46,7 @@ public class ModuleManager implements Jsonable, Util {
         register(new XCarry());
         register(new NoFall());
         register(new BoatFly());
+        register(new NoRender());
         register(new Sprint());
         register(new FOV());
         register(new HightJump());
@@ -55,6 +57,8 @@ public class ModuleManager implements Jsonable, Util {
         register(new Flight());
         register(new AutoRespawn());
         register(new AutoWalk());
+        register(new Reach());
+        register(new Scaffold());
     }
 
     public void register(Module module) {

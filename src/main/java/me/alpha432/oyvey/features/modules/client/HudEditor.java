@@ -1,6 +1,6 @@
 package me.alpha432.oyvey.features.modules.client;
 
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.impl.TickEvent;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.gui.HudEditorScreen;
@@ -17,7 +17,7 @@ public class HudEditor extends Module {
             disable();
             return;
         }
-        mc.setScreen(OyVey.hudEditorScreen);
+        mc.setScreen(Impossible.hudEditorScreen);
     }
 
     @Override

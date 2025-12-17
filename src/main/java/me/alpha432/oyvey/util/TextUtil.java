@@ -2,7 +2,7 @@ package me.alpha432.oyvey.util;
 
 import dev.cattyn.catformat.CatFormat;
 import dev.cattyn.catformat.fabric.FabricCatFormat;
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import net.minecraft.network.chat.MutableComponent;
 
 public final class TextUtil {
@@ -30,6 +30,6 @@ public final class TextUtil {
     }
 
     private static void initColors() {
-        formatter.add("global", () -> OyVey.colorManager.getColorAsInt());
+        formatter.add("global", () -> Impossible.colorManager.getColorAsInt());
     }
 }

@@ -1,6 +1,6 @@
 package me.alpha432.oyvey.features.modules.client;
 
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.impl.MouseEvent;
 import me.alpha432.oyvey.event.impl.Render2DEvent;
 import me.alpha432.oyvey.event.system.Subscribe;
@@ -46,12 +46,12 @@ public abstract class HudModule extends Module {
     @Subscribe
     public void onMouse(MouseEvent e) {
         if (!(mc.screen instanceof HudEditorScreen) || nullCheck()) return;
-        if (OyVey.hudEditorScreen == null) return;
+        if (Impossible.hudEditorScreen == null) return;
 
         if (e.getAction() == 0) {
             button = false;
             dragging = false;
-            OyVey.hudEditorScreen.currentDragging = null;
+            Impossible.hudEditorScreen.currentDragging = null;
         }
 
         if (e.getAction() == 1 && isHovering()) {
@@ -60,17 +60,17 @@ public abstract class HudModule extends Module {
     }
 
     protected void render(Render2DEvent e) {
-        if (!(mc.screen instanceof HudEditorScreen) || nullCheck() || OyVey.hudEditorScreen == null) return;
+        if (!(mc.screen instanceof HudEditorScreen) || nullCheck() || Impossible.hudEditorScreen == null) return;
 
         float x = getX();
         float y = getY();
 
         if (button) {
-            if (!dragging && isHovering() && OyVey.hudEditorScreen.currentDragging == null) {
+            if (!dragging && isHovering() && Impossible.hudEditorScreen.currentDragging == null) {
                 dragX = getMouseX() - x;
                 dragY = getMouseY() - y;
                 dragging = true;
-                OyVey.hudEditorScreen.currentDragging = this;
+                Impossible.hudEditorScreen.currentDragging = this;
             }
 
             if (dragging) {
@@ -86,9 +86,9 @@ public abstract class HudModule extends Module {
             dragging = false;
         }
 
-        boolean shouldDrawDescription = isHovering() && !OyVey.hudEditorScreen.anyHover;
-        if (OyVey.hudEditorScreen.currentDragging != null) {
-            shouldDrawDescription = OyVey.hudEditorScreen.currentDragging == this;
+        boolean shouldDrawDescription = isHovering() && !Impossible.hudEditorScreen.anyHover;
+        if (Impossible.hudEditorScreen.currentDragging != null) {
+            shouldDrawDescription = Impossible.hudEditorScreen.currentDragging == this;
         }
 
         if (shouldDrawDescription) {
@@ -100,12 +100,12 @@ public abstract class HudModule extends Module {
             }
             e.getContext().drawString(mc.font, getName(),
                     (int) textX, (int) (y + height / 2f - textHeight / 2f), -1);
-            OyVey.hudEditorScreen.anyHover = true;
+            Impossible.hudEditorScreen.anyHover = true;
         }
 
         RenderUtil.rect(e.getContext(),
                 x - 1, y - 1, x + width + 1, y + height + 1,
-                OyVey.colorManager.getColor().getRGB(), 1.0f);
+                Impossible.colorManager.getColor().getRGB(), 1.0f);
     }
 
     public int getMouseX() {

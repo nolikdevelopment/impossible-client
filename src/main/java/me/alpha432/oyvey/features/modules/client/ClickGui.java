@@ -1,6 +1,6 @@
 package me.alpha432.oyvey.features.modules.client;
 
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.impl.ClientEvent;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.commands.Command;
@@ -46,11 +46,11 @@ public class ClickGui
     public void onSettingChange(ClientEvent event) {
         if (event.getStage() == 2 && event.getSetting().getFeature().equals(this)) {
             if (event.getSetting().equals(this.prefix)) {
-                OyVey.commandManager.setPrefix(this.prefix.getPlannedValue());
-                Command.sendMessage("Prefix set to {global} %s", OyVey.commandManager.getPrefix());
+                Impossible.commandManager.setPrefix(this.prefix.getPlannedValue());
+                Command.sendMessage("Prefix set to {global} %s", Impossible.commandManager.getPrefix());
             }
             if (event.getSetting().equals(this.color)) {
-                OyVey.colorManager.setColor(this.color.getPlannedValue());
+                Impossible.colorManager.setColor(this.color.getPlannedValue());
             }
         }
     }
@@ -65,8 +65,8 @@ public class ClickGui
 
     @Override
     public void onLoad() {
-        OyVey.colorManager.setColor(this.color.getValue());
-        OyVey.commandManager.setPrefix(this.prefix.getValue());
+        Impossible.colorManager.setColor(this.color.getValue());
+        Impossible.commandManager.setPrefix(this.prefix.getValue());
     }
 
     @Override

@@ -17,10 +17,10 @@
   "accessWidener": "oyvey.accesswidener",
   "entrypoints": {
     "client": [
-      "me.alpha432.oyvey.OyVey"
+      "me.alpha432.oyvey.Impossible"
     ],
     "main": [
-      "me.alpha432.oyvey.OyVey"
+      "me.alpha432.oyvey.Impossible"
     ]
   },
   "mixins": [

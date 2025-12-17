@@ -2,8 +2,7 @@ package me.alpha432.oyvey.features.modules;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.cattyn.catformat.fabric.FabricCatFormat;
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.impl.ClientEvent;
 import me.alpha432.oyvey.event.impl.Render2DEvent;
 import me.alpha432.oyvey.event.impl.Render3DEvent;
@@ -97,8 +96,8 @@ public class Module extends Feature implements Jsonable {
     }
 
     public void setDisplayName(String name) {
-        Module module = OyVey.moduleManager.getModuleByDisplayName(name);
-        Module originalModule = OyVey.moduleManager.getModuleByName(name);
+        Module module = Impossible.moduleManager.getModuleByDisplayName(name);
+        Module originalModule = Impossible.moduleManager.getModuleByName(name);
         if (module == null && originalModule == null) {
             Command.sendMessage(this.getDisplayName() + ", name: " + this.getName() + ", has been renamed to: " + name);
             this.displayName.setValue(name);

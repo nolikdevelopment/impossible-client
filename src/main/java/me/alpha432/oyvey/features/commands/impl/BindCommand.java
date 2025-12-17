@@ -1,6 +1,6 @@
 package me.alpha432.oyvey.features.commands.impl;
 
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.impl.KeyInputEvent;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.commands.Command;
@@ -26,7 +26,7 @@ public class BindCommand
             return;
         }
         String moduleName = commands[0];
-        Module module = OyVey.moduleManager.getModuleByName(moduleName);
+        Module module = Impossible.moduleManager.getModuleByName(moduleName);
         if (module == null) {
             sendMessage("Unknown module '%s'!", moduleName);
             return;

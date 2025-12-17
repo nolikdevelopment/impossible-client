@@ -22,5 +22,4 @@ public class MixinInGameHud {
         Render2DEvent event = new Render2DEvent(context, tickCounter.getGameTimeDeltaPartialTick(true));
         EVENT_BUS.post(event);
     }
-
 }

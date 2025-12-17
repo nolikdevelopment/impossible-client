@@ -1,7 +1,7 @@
 package me.alpha432.oyvey.features.commands.impl;
 
 import com.google.gson.JsonParser;
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.features.commands.Command;
 import me.alpha432.oyvey.features.modules.Module;
 import me.alpha432.oyvey.features.settings.Setting;
@@ -19,18 +19,18 @@ public class ModuleCommand
         Setting setting;
         if (commands.length == 1) {
             ModuleCommand.sendMessage("Modules: ");
-            for (Module.Category category : OyVey.moduleManager.getCategories()) {
+            for (Module.Category category : Impossible.moduleManager.getCategories()) {
                 StringBuilder modules = new StringBuilder(category.getName() + ": ");
-                for (Module module : OyVey.moduleManager.getModulesByCategory(category)) {
+                for (Module module : Impossible.moduleManager.getModulesByCategory(category)) {
                     modules.append(module.isEnabled() ? ChatFormatting.GREEN : ChatFormatting.RED).append(module.getName()).append(ChatFormatting.WHITE).append(", ");
                 }
                 ModuleCommand.sendMessage(modules.toString());
             }
             return;
         }
-        Module module = OyVey.moduleManager.getModuleByDisplayName(commands[0]);
+        Module module = Impossible.moduleManager.getModuleByDisplayName(commands[0]);
         if (module == null) {
-            module = OyVey.moduleManager.getModuleByName(commands[0]);
+            module = Impossible.moduleManager.getModuleByName(commands[0]);
             if (module == null) {
                 ModuleCommand.sendMessage("This module doesnt exist.");
                 return;

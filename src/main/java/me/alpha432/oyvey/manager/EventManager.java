@@ -1,6 +1,6 @@
 package me.alpha432.oyvey.manager;
 
-import me.alpha432.oyvey.OyVey;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.Stage;
 import me.alpha432.oyvey.event.impl.*;
 import me.alpha432.oyvey.event.system.Subscribe;
@@ -26,7 +26,7 @@ public class EventManager extends Feature {
     public void onTick(TickEvent event) {
         if (nullCheck())
             return;
-        OyVey.moduleManager.onTick();
+        Impossible.moduleManager.onTick();
         for (Player player : mc.level.players()) {
             if (player == null || player.getHealth() > 0.0F)
                 continue;
@@ -36,43 +36,41 @@ public class EventManager extends Feature {
 
     @Subscribe
     public void onUpdateWalkingPlayer(UpdateWalkingPlayerEvent event) {
-        if (nullCheck())
-            return;
+        if (nullCheck()) return;
         if (event.getStage() == Stage.PRE) {
-            OyVey.speedManager.update();
-            OyVey.rotationManager.updateRotations();
-            OyVey.positionManager.updatePosition();
+           // Impossible.rotationManager.updateRotations();
+            Impossible.positionManager.updatePosition();
         }
         if (event.getStage() == Stage.POST) {
-            OyVey.rotationManager.restoreRotations();
-            OyVey.positionManager.restorePosition();
+            Impossible.rotationManager.restoreRotations();
+            Impossible.positionManager.restorePosition();
         }
     }
 
     @Subscribe
     public void onPacketReceive(PacketEvent.Receive event) {
-        OyVey.serverManager.onPacketReceived();
+        Impossible.serverManager.onPacketReceived();
         if (event.getPacket() instanceof ClientboundSetTimePacket)
-            OyVey.serverManager.update();
+            Impossible.serverManager.update();
         if (event.getPacket() instanceof ClientboundCustomPayloadPacket(CustomPacketPayload payload)
                 && payload instanceof BrandPayload(String brand)) {
-            OyVey.serverManager.setServerBrand(brand);
+            Impossible.serverManager.setServerBrand(brand);
         }
     }
 
     @Subscribe
     public void onWorldRender(Render3DEvent event) {
-        OyVey.moduleManager.onRender3D(event);
+        Impossible.moduleManager.onRender3D(event);
     }
 
     @Subscribe
     public void onRenderGameOverlayEvent(Render2DEvent event) {
-        OyVey.moduleManager.onRender2D(event);
+        Impossible.moduleManager.onRender2D(event);
     }
 
     @Subscribe
     public void onKeyInput(KeyInputEvent event) {
-        OyVey.moduleManager.onKeyPressed(event.getKey());
+        Impossible.moduleManager.onKeyPressed(event.getKey());
     }
 
     @Subscribe
@@ -81,7 +79,7 @@ public class EventManager extends Feature {
             event.cancel();
             try {
                 if (event.getMessage().length() > 1) {
-                    OyVey.commandManager.executeCommand(event.getMessage().substring(Command.getCommandPrefix().length() - 1));
+                    Impossible.commandManager.executeCommand(event.getMessage().substring(Command.getCommandPrefix().length() - 1));
                 } else {
                     Command.sendMessage("Please enter a command.");
                 }
