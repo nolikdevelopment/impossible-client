@@ -2,10 +2,14 @@ package me.alpha432.oyvey.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import me.alpha432.oyvey.Impossible;
+import me.alpha432.oyvey.features.gui.OyVeyGui;
+import me.alpha432.oyvey.features.modules.misc.AntiLiquid;
 import me.alpha432.oyvey.features.modules.player.HightJump;
 import net.minecraft.world.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Entity.class)
 public class MixinEntity {
@@ -17,4 +21,11 @@ public class MixinEntity {
         }
         return original;
     }
+   @Inject(method = "waterSwimSound", at = @At("HEAD"), cancellable = true)
+    private void aVoid(CallbackInfo ci) {
+       AntiLiquid antiLiquid = Impossible.moduleManager.getModuleByClass(AntiLiquid.class);
+       if (antiLiquid.isEnabled()) {
+           ci.cancel();
+       }
+   }
 }

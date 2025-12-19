@@ -5,6 +5,7 @@ import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.Stage;
 import me.alpha432.oyvey.event.impl.TickEvent;
 import me.alpha432.oyvey.event.impl.UpdateWalkingPlayerEvent;
+import me.alpha432.oyvey.features.gui.OyVeyGui;
 import me.alpha432.oyvey.features.modules.movement.NoSlow;
 import net.minecraft.client.player.LocalPlayer;
 import org.spongepowered.asm.mixin.Mixin;
@@ -37,5 +38,12 @@ public class MixinClientPlayerEntity {
             return false;
         }
         return original;
+    }
+    @Inject(method = "handlePortalTransitionEffect", at = @At("HEAD"), cancellable = true)
+    private void aVoid(boolean bl, CallbackInfo ci) {
+        NoSlow noSlow = Impossible.moduleManager.getModuleByClass(NoSlow.class);
+        if (noSlow.isEnabled()) {
+            ci.cancel();
+        }
     }
 }

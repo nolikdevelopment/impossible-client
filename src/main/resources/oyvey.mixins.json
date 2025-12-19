@@ -19,7 +19,9 @@
     "MixinEntity",
     "MixinGameRenderer",
     "MixinPlayerEntity",
-    "MixinLivingEntityRenderer"
+    "MixinLivingEntityRenderer",
+    "MixinGui",
+    "MixinScreenEffectRenderer"
   ],
   "injectors": {
     "defaultRequire": 1

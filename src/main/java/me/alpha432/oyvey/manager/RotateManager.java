@@ -10,6 +10,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
 
 public class RotateManager extends Feature {
+    // TODO: переписать
     private float yaw, pitch;
     private boolean rotating;
     private long lastRotationTime;
@@ -43,6 +44,7 @@ public class RotateManager extends Feature {
     private void sendRotationPacket(float yaw, float pitch) {
         if (mc.player != null || mc.getConnection() != null) {
             mc.getConnection().send(new ServerboundMovePlayerPacket.Rot(yaw, pitch, mc.player.onGround(), mc.player.horizontalCollision));
+            restoreRotations();
         }
     }
 
@@ -60,5 +62,13 @@ public class RotateManager extends Feature {
 
     public float getPitch() {
         return pitch;
+    }
+
+    public void setPitch(float pitch) {
+        this.pitch = pitch;
+    }
+
+    public void setYaw(float yaw) {
+        this.yaw = yaw;
     }
 }

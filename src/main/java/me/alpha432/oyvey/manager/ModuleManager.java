@@ -15,10 +15,7 @@ import me.alpha432.oyvey.features.modules.hud.Watermark;
 import me.alpha432.oyvey.features.modules.misc.*;
 import me.alpha432.oyvey.features.modules.movement.*;
 import me.alpha432.oyvey.features.modules.player.*;
-import me.alpha432.oyvey.features.modules.render.BlockHighlight;
-import me.alpha432.oyvey.features.modules.render.FOV;
-import me.alpha432.oyvey.features.modules.render.FullBright;
-import me.alpha432.oyvey.features.modules.render.NoRender;
+import me.alpha432.oyvey.features.modules.render.*;
 import me.alpha432.oyvey.util.traits.Jsonable;
 import me.alpha432.oyvey.util.traits.Util;
 
@@ -59,6 +56,14 @@ public class ModuleManager implements Jsonable, Util {
         register(new AutoWalk());
         register(new Reach());
         register(new Scaffold());
+        register(new AntiLiquid());
+        register(new AutoFarm());
+        register(new AntiSpam());
+        register(new AntiHunger());
+        register(new AutoNameTag());
+        register(new AutoFish());
+        register(new ESP());
+        register(new NoBob());
     }
 
     public void register(Module module) {

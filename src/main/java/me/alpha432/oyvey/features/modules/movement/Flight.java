@@ -3,6 +3,9 @@ package me.alpha432.oyvey.features.modules.movement;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
 import me.alpha432.oyvey.util.MathUtil;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.client.renderer.ScreenEffectRenderer;
+import net.minecraft.client.renderer.fog.FogRenderer;
 
 public class Flight extends Module {
     public Flight() {

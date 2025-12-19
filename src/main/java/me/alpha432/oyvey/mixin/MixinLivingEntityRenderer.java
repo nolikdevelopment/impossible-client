@@ -1,7 +1,6 @@
 package me.alpha432.oyvey.mixin;
 
 import me.alpha432.oyvey.Impossible;
-import me.alpha432.oyvey.features.gui.OyVeyGui;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -20,13 +19,12 @@ public abstract class MixinLivingEntityRenderer<T extends LivingEntity, S extend
     protected MixinLivingEntityRenderer(EntityRendererProvider.Context context) {
         super(context);
     }
-
+    // TODO: переписать
     @Inject(method = "extractRenderState(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;F)V", at = @At("HEAD"), cancellable = true)
     private void aVoid(T livingEntity, S livingEntityRenderState, float f, CallbackInfo ci) {
         if (Impossible.rotationManager.isRotating() && mc.player != mc.player) {
-            livingEntityRenderState.bodyRot = Impossible.rotationManager.getYaw();
-            livingEntityRenderState.xRot = Impossible.rotationManager.getPitch();
-            livingEntity.xRotO = Impossible.rotationManager.getYaw();
+            Impossible.rotationManager.setYaw(livingEntity.yHeadRot);
+            Impossible.rotationManager.setPitch(livingEntity.xRotO);
           }
         }
     }
