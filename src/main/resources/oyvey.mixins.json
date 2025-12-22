@@ -19,7 +19,6 @@
     "MixinEntity",
     "MixinGameRenderer",
     "MixinPlayerEntity",
-    "MixinLivingEntityRenderer",
     "MixinGui",
     "MixinScreenEffectRenderer",
     "MixinMinecraftClient",

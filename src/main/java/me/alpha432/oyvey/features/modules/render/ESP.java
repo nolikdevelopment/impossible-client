@@ -13,7 +13,7 @@ import net.minecraft.world.phys.AABB;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
- // TODO : Пустой рендер если ты подобрал предмет
+
 public class ESP extends Module {
     List<Entity> pizdec = new ArrayList<>();
 
@@ -21,15 +21,17 @@ public class ESP extends Module {
         super("ESP", "", Category.RENDER);
     }
 
-    @Subscribe
-    public void onTick() {
-        for (Entity entity : mc.level.entitiesForRendering()) {
-            if (mc.player.position().distanceTo(entity.position()) > 30) continue;
-            if (entity == mc.player) continue;
-            if (!isEntity(entity)) continue;
-            pizdec.add(entity);
-        }
-    }
+     @Subscribe
+     public void onTick() {
+         pizdec.clear();
+         for (Entity entity : mc.level.entitiesForRendering()) {
+             if (mc.player.position().distanceTo(entity.position()) > 30) continue;
+             if (entity == mc.player) continue;
+             if (!isEntity(entity)) continue;
+             pizdec.add(entity);
+         }
+         pizdec.removeIf(entity -> !entity.isAlive());
+     }
     @Subscribe public void onRender3D(Render3DEvent event) {
        if (Feature.nullCheck()) return;
        if (pizdec.isEmpty()) return;
