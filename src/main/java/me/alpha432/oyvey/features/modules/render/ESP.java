@@ -25,7 +25,7 @@ public class ESP extends Module {
      public void onTick() {
          pizdec.clear();
          for (Entity entity : mc.level.entitiesForRendering()) {
-             if (mc.player.position().distanceTo(entity.position()) > 30) continue;
+             if (mc.player.position().distanceTo(entity.position()) > 65) continue;
              if (entity == mc.player) continue;
              if (!isEntity(entity)) continue;
              pizdec.add(entity);

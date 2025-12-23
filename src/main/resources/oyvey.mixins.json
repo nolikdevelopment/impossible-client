@@ -21,8 +21,8 @@
     "MixinPlayerEntity",
     "MixinGui",
     "MixinScreenEffectRenderer",
-    "MixinMinecraftClient",
-    "MixinScreen"
+    "MixinScreen",
+    "MixinLivingEntityRenderer"
   ],
   "injectors": {
     "defaultRequire": 1

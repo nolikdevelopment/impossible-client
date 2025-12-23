@@ -9,6 +9,7 @@ import me.alpha432.oyvey.features.modules.Module;
 import me.alpha432.oyvey.features.modules.client.ClickGui;
 import me.alpha432.oyvey.features.modules.client.HudEditor;
 import me.alpha432.oyvey.features.modules.client.Notifications;
+import me.alpha432.oyvey.features.modules.combat.Aura;
 import me.alpha432.oyvey.features.modules.combat.Criticals;
 import me.alpha432.oyvey.features.modules.hud.Coordinates;
 import me.alpha432.oyvey.features.modules.hud.Watermark;
@@ -67,6 +68,7 @@ public class ModuleManager implements Jsonable, Util {
         register(new ElytraFly());
         register(new MultiTask());
         register(new AutoMiner());
+        register(new Aura());
     }
 
     public void register(Module module) {
