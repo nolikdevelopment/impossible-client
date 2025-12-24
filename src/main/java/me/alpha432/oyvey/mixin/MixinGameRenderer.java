@@ -28,4 +28,11 @@ public class MixinGameRenderer {
             ci.cancel();
         }
     }
+    @Inject(method = "bobHurt", at = @At("HEAD"), cancellable = true)
+    private void aVoidHook1(PoseStack poseStack, float f, CallbackInfo ci) {
+        NoBob noBob = Impossible.moduleManager.getModuleByClass(NoBob.class);
+        if (noBob.isEnabled()) {
+            ci.cancel();
+        }
+    }
 }
