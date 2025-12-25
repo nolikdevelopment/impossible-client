@@ -2,6 +2,8 @@ package me.alpha432.oyvey.features.modules.movement;
 
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 
 public class AutoWalk extends Module {
     public AutoWalk() {

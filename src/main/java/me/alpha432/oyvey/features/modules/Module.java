@@ -15,6 +15,8 @@ import me.alpha432.oyvey.util.traits.Jsonable;
 import net.minecraft.ChatFormatting;
 import org.joml.Vector2f;
 
+import java.util.Objects;
+
 public class Module extends Feature implements Jsonable {
     private final String description;
     private final Category category;

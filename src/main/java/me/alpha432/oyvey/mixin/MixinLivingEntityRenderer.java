@@ -12,17 +12,20 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import static me.alpha432.oyvey.util.traits.Util.mc;
+
+// TODO: дописать ( нужно почитать про класс Object )
 
 @Mixin(LivingEntityRenderer.class)
 public abstract class MixinLivingEntityRenderer<T extends LivingEntity, S extends LivingEntityRenderState, M extends EntityModel<? super S>> extends EntityRenderer {
     protected MixinLivingEntityRenderer(EntityRendererProvider.Context context) {
         super(context);
     }
-    @Inject(method = "extractRenderState(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;F)V", at = @At("HEAD"))
+    @Inject(method = "extractRenderState(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;F)V", at = @At("RETURN"))
     private void aVoid(T livingEntity, S livingEntityRenderState, float f, CallbackInfo ci) {
-           Impossible.rotationManager.setYaw(livingEntity.yHeadRot);
-           Impossible.rotationManager.setPitch(livingEntity.xRotO);
-           livingEntityRenderState.xRot = Impossible.rotationManager.getPitch();
-           livingEntity.yHeadRot = Impossible.rotationManager.getYaw();
+            if (Impossible.rotationManager.isRotating()) {
+                livingEntityRenderState.xRot = Impossible.rotationManager.getPitch();
+                livingEntityRenderState.yRot = Impossible.rotationManager.getYaw();
+            }
     }
 }

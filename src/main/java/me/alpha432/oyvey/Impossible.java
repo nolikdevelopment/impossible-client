@@ -10,7 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Impossible implements ModInitializer, ClientModInitializer {
-    public static final String NAME = "Impossible Client v2 - 1.21.10 - 24/12/2025 23:35";
+    public static final String NAME = "Impossible Client v2 - 1.21.10 - 26/12/2025 0:20";
 
 
     public static float TIMER = 1f;
