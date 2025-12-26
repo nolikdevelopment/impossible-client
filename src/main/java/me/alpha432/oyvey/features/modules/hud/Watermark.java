@@ -21,7 +21,7 @@ public class Watermark extends HudModule {
                 TextUtil.text(text.getValue(), ""),
                 (int) getX(), (int) getY(), -1);
 
-        String watermarkString = text.getValue() + "";
+        String watermarkString = Impossible.NAME + "";
         setWidth(mc.font.width(watermarkString));
         setHeight(mc.font.lineHeight);
     }

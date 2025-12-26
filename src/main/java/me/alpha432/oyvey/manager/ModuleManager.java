@@ -11,6 +11,7 @@ import me.alpha432.oyvey.features.modules.client.HudEditor;
 import me.alpha432.oyvey.features.modules.client.Notifications;
 import me.alpha432.oyvey.features.modules.combat.Aura;
 import me.alpha432.oyvey.features.modules.combat.Criticals;
+import me.alpha432.oyvey.features.modules.combat.OffHand;
 import me.alpha432.oyvey.features.modules.hud.Coordinates;
 import me.alpha432.oyvey.features.modules.hud.Watermark;
 import me.alpha432.oyvey.features.modules.misc.*;
@@ -70,6 +71,7 @@ public class ModuleManager implements Jsonable, Util {
         register(new AutoMiner());
         register(new Aura());
         register(new Announcer());
+        register(new OffHand());
     }
 
     public void register(Module module) {

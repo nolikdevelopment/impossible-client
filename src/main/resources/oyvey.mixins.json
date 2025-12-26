@@ -23,7 +23,8 @@
     "MixinScreenEffectRenderer",
     "MixinScreen",
     "MixinLivingEntityRenderer",
-    "MixinSweetBerryBushBlock"
+    "MixinSweetBerryBushBlock",
+    "MixinIceBlock"
   ],
   "injectors": {
     "defaultRequire": 1
