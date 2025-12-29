@@ -3,8 +3,6 @@ package me.alpha432.oyvey.features.modules.movement;
 import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
-import net.fabricmc.fabric.mixin.item.client.HeldItemRendererMixin;
-import net.minecraft.client.renderer.ItemInHandRenderer;
 
 
 public class FastFall extends Module {

@@ -2,6 +2,7 @@ package me.alpha432.oyvey.features.modules.combat;
 
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
+import me.alpha432.oyvey.util.player.InventoryUtil;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.Items;
@@ -18,8 +19,8 @@ public class OffHand extends Module {
             if (mc.screen instanceof InventoryScreen || mc.screen == null) {
                 for (int i = 9; i < 45; i++) {
                     if (mc.player.getInventory().getItem(i >= 36 ? i - 36 : i).getItem() == Items.TOTEM_OF_UNDYING) {
-                        mc.gameMode.handleInventoryMouseClick(mc.player.containerMenu.containerId, i, 0, ClickType.PICKUP, mc.player);
-                        mc.gameMode.handleInventoryMouseClick(mc.player.containerMenu.containerId, 45, 0, ClickType.PICKUP, mc.player);
+                        InventoryUtil.click(i, 0, ClickType.PICKUP);
+                        InventoryUtil.click(45, 0, ClickType.PICKUP);
                         break;
                     }
                 }
