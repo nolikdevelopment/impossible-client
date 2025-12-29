@@ -7,6 +7,7 @@ import me.alpha432.oyvey.event.impl.TickEvent;
 import me.alpha432.oyvey.event.impl.UpdateWalkingPlayerEvent;
 import me.alpha432.oyvey.features.gui.OyVeyGui;
 import me.alpha432.oyvey.features.modules.movement.NoSlow;
+import me.alpha432.oyvey.util.traits.Util;
 import net.minecraft.client.player.LocalPlayer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
