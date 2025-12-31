@@ -2,6 +2,8 @@ package me.alpha432.oyvey.util.player;
 
 import me.alpha432.oyvey.util.traits.Util;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 public class PlayerUtil implements Util {
@@ -31,5 +33,17 @@ public class PlayerUtil implements Util {
     }
     public static ItemStack getWeaponOffhand() {
         return mc.player.getWeaponItem();
+    }
+    public static boolean getFallDistance(float distance) {
+        return mc.player.fallDistance > distance;
+    }
+    public static boolean onGround() {
+        return mc.player.onGround();
+    }
+    public static boolean isInLiquid() {
+        return mc.player.isInLiquid();
+    }
+    public static boolean getArmorSlot(EquipmentSlot slot, Item item) {
+        return mc.player.getItemBySlot(slot).getItem().equals(item);
     }
 }

@@ -4,6 +4,7 @@ package me.alpha432.oyvey.features.modules.movement;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
 import me.alpha432.oyvey.util.MathUtil;
+import me.alpha432.oyvey.util.player.PlayerUtil;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Items;
 
@@ -12,8 +13,8 @@ public class ElytraFly extends Module {
         super("ElytraFly", "", Category.MOVEMENT);
     }
     @Subscribe public void onTick() {
-        if (mc.player.getItemBySlot(EquipmentSlot.CHEST).getItem().equals(Items.ELYTRA)) {
-            if (mc.player.isFallFlying()) {
+            if (PlayerUtil.getArmorSlot(EquipmentSlot.CHEST, Items.ELYTRA)) {
+                if (PlayerUtil.isGliding()) {
                 if (mc.options.keyJump.isDown()) {
                     mc.player.setDeltaMovement(mc.player.getDeltaMovement().x, 1, mc.player.getDeltaMovement().z);
                 } else if (mc.options.keyShift.isDown()) {

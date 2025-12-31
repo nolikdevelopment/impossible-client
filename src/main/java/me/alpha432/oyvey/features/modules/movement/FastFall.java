@@ -3,6 +3,7 @@ package me.alpha432.oyvey.features.modules.movement;
 import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
+import me.alpha432.oyvey.util.player.PlayerUtil;
 
 
 public class FastFall extends Module {
@@ -16,12 +17,12 @@ public class FastFall extends Module {
         }
     }
     private boolean checkPos() {
-        if (!mc.player.onGround()) return false;
-        if (mc.player.fallDistance > 3) return false;
-        if (mc.player.isFallFlying()) return false;
-        if (mc.player.isDeadOrDying()) return false;
-        if (mc.player.isInLiquid()) return false;
-        if (mc.player.isMovingSlowly()) return false;
+        if (!PlayerUtil.onGround()) return false;
+        if (PlayerUtil.getFallDistance(3)) return false;
+        if (PlayerUtil.isGliding()) return false;
+        if (PlayerUtil.isDead()) return false;
+        if (PlayerUtil.isInLiquid()) return false;
+        if (PlayerUtil.isSneaking()) return false;
         return true;
     }
     private void isFall() {
