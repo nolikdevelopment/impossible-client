@@ -20,7 +20,6 @@ import java.util.Objects;
 public class Module extends Feature implements Jsonable {
     private final String description;
     private final Category category;
-
     public final Setting<Boolean> enabled = bool("Enabled", false);
     public final Setting<Boolean> drawn = bool("Drawn", true);
     public final Setting<Bind> bind = key("Keybind", new Bind(-1));

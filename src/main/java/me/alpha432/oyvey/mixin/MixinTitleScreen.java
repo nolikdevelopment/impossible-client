@@ -25,6 +25,5 @@ public class MixinTitleScreen {
     @Inject(method = "init", at = @At("HEAD"))
     private void aVoid(CallbackInfo ci) {
             mc.getSoundManager().play(SimpleSoundInstance.forMusic(SoundEvents.EXPERIENCE_ORB_PICKUP, 1f));
-
     }
 }
