@@ -3,9 +3,9 @@ package me.alpha432.oyvey.mixin;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.Stage;
+import me.alpha432.oyvey.event.impl.SlowEvent;
 import me.alpha432.oyvey.event.impl.TickEvent;
 import me.alpha432.oyvey.event.impl.UpdateWalkingPlayerEvent;
-import me.alpha432.oyvey.features.gui.OyVeyGui;
 import me.alpha432.oyvey.features.modules.movement.NoSlow;
 import me.alpha432.oyvey.util.traits.Util;
 import net.minecraft.client.player.LocalPlayer;
@@ -14,10 +14,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static me.alpha432.oyvey.util.traits.Util.EVENT_BUS;
-
 @Mixin(LocalPlayer.class)
-public class MixinClientPlayerEntity {
+public class MixinClientPlayerEntity implements Util {
     @Inject(method = "tick", at = @At("TAIL"))
     private void tickHook(CallbackInfo ci) {
         EVENT_BUS.post(new TickEvent());
@@ -36,9 +34,15 @@ public class MixinClientPlayerEntity {
     private boolean aVoid(boolean original) {
         NoSlow noSlow = Impossible.moduleManager.getModuleByClass(NoSlow.class);
         if (noSlow.isEnabled()) {
-            return false;
+            SlowEvent event = new SlowEvent();
+            EVENT_BUS.post(event);
+            if (event.isCancelled()) {
+                event.cancel();
+            }
+        } else {
+            return original;
         }
-        return original;
+        return false;
     }
     @Inject(method = "handlePortalTransitionEffect", at = @At("HEAD"), cancellable = true)
     private void aVoid(boolean bl, CallbackInfo ci) {

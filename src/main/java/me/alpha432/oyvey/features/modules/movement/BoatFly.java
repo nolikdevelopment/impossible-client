@@ -7,6 +7,7 @@ import me.alpha432.oyvey.util.MathUtil;
 import me.alpha432.oyvey.util.player.PlayerUtil;
 import net.minecraft.world.entity.vehicle.Boat;
 
+
 public class BoatFly extends Module {
     public BoatFly() {
         super("BoatFly", "Fly using boats", Category.MOVEMENT);
