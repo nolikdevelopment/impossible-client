@@ -16,7 +16,7 @@ import static me.alpha432.oyvey.util.traits.Util.mc;
 
 @Mixin(TitleScreen.class)
 public class MixinTitleScreen {
-    @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/Screen;render(Lnet/minecraft/client/gui/GuiGraphics;IIF)V"))
+    @Inject(method = "render", at = @At("HEAD"))
     private void aVoid(GuiGraphics guiGraphics, int i, int j, float f, CallbackInfo ci) {
         guiGraphics.drawString(mc.font, Impossible.NAME, 1, 1, -1, true);
     }
