@@ -5,13 +5,13 @@ import me.alpha432.oyvey.manager.*;
 import me.alpha432.oyvey.util.TextUtil;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.SharedConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Impossible implements ModInitializer, ClientModInitializer {
-    public static final String NAME = "Impossible Client v2 - 1.21.10 - 05/01/2026 1:45";
-
+    public static final String VERSION = "v2 - 1.21.10 - 05/01/2026 22:00";
+    public static final String CLIENT_NAME = "Impossible Client";
+    public static final String NAME = CLIENT_NAME + " " + VERSION;
 
     public static float TIMER = 1f;
 

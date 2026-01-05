@@ -1,5 +1,6 @@
 package me.alpha432.oyvey.features.modules.misc;
 
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
 import me.alpha432.oyvey.util.models.Timer;
@@ -16,7 +17,7 @@ public class Announcer extends Module {
     @Subscribe public void onTick() {
         if (timer.passedS(15)) {
                 if (PlayerUtil.isGliding()) {
-                    ChatUtil.sendChatMessage("Я лечу на элитрах с помощью Impossible Client!");
+                    ChatUtil.sendChatMessage(String.format("Я лечу на элитрах с помощью %s!", Impossible.CLIENT_NAME));
                     timer.reset();
             }
         }

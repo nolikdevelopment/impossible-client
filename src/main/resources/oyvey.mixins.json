@@ -13,6 +13,7 @@
     "MixinKeyboard",
     "MixinMouse",
     "MixinRenderTickCounter",
+    "MixinMinecraftClient",
     "MixinWorldRenderer",
     "MixinTitleScreen",
     "IMixin.ILivingEntity",
