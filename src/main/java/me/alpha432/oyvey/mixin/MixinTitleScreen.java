@@ -20,7 +20,6 @@ public class MixinTitleScreen {
     private void aVoid(GuiGraphics guiGraphics, int i, int j, float f, CallbackInfo ci) {
         guiGraphics.drawString(mc.font, Impossible.NAME, 1, 1, -1, true);
     }
-
     // TODO: Если выйти в главное меню, звук вновь воспроизведется
     @Inject(method = "init", at = @At("HEAD"))
     private void aVoid(CallbackInfo ci) {
