@@ -17,7 +17,7 @@ public class Announcer extends Module {
     @Subscribe public void onTick() {
         if (timer.passedS(15)) {
                 if (PlayerUtil.isGliding()) {
-                    ChatUtil.sendChatMessage(String.format("Я лечу на элитрах с помощью %s!", Impossible.CLIENT_NAME));
+                    ChatUtil.sendChatMessage(String.format("я лікую як моль завдяки %s!", Impossible.CLIENT_NAME));
                     timer.reset();
             }
         }
