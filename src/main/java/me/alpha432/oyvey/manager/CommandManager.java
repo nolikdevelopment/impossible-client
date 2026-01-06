@@ -2,6 +2,7 @@ package me.alpha432.oyvey.manager;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.features.Feature;
 import me.alpha432.oyvey.features.commands.Command;
 import me.alpha432.oyvey.features.commands.impl.*;
@@ -15,7 +16,7 @@ import java.util.List;
 public class CommandManager
         extends Feature implements Jsonable {
     private final List<Command> commands = new ArrayList<>();
-    private String clientMessage = "[Impossible]";
+    private String clientMessage = "[" + Impossible.NAME + "]";//"[Impossible]";
     private String prefix = ".";
 
     public CommandManager() {

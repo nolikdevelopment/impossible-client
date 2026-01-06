@@ -24,7 +24,7 @@ public class MixinEntity {
     private float aVoid(float original) {
         HightJump hightJump = Impossible.moduleManager.getModuleByClass(HightJump.class);
         if (hightJump.isEnabled()) {
-            return original + 1;
+            return original + hightJump.height.getValue();
         }
         return original;
     }
