@@ -1,8 +1,10 @@
 package me.nolikdevelopment.impossibleclient.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import me.nolikdevelopment.impossibleclient.Impossible;
 import me.nolikdevelopment.impossibleclient.event.impl.ScreenEvent;
 import me.nolikdevelopment.impossibleclient.features.modules.misc.AutoSign;
+import me.nolikdevelopment.impossibleclient.features.modules.player.MultiTask;
 import me.nolikdevelopment.impossibleclient.util.traits.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
@@ -32,5 +34,14 @@ public class MixinMinecraft implements Util {
     private void onUpdateTitle(CallbackInfo ci) {
         mc.getWindow().setTitle(Impossible.NAME);
         ci.cancel();
+    }
+    // TODO: для себя ( мультитаск )
+    @ModifyExpressionValue(method = "handleKeybinds", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;isUsingItem()Z"))
+    private boolean aVoid(boolean original) {
+        MultiTask multiTask = Impossible.moduleManager.getModuleByClass(MultiTask.class);
+        if (multiTask.isEnabled()) {
+            return false;
+        }
+        return original;
     }
 }
