@@ -12,7 +12,7 @@ import me.alpha432.oyvey.util.player.PlayerUtil;
 public class Announcer extends Module {
     Timer timer = new Timer();
     public Announcer() {
-        super("Announcer", "", Category.MISC);
+        super("Announcer", "Writes messages in the chat", Category.MISC);
     }
     @Subscribe public void onTick() {
         if (timer.passedS(15)) {

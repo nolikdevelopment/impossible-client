@@ -9,7 +9,7 @@ import net.minecraft.world.InteractionHand;
 
 public class Scaffold extends Module {
     public Scaffold() {
-        super("Scaffold", "", Category.PLAYER);
+        super("Scaffold", "Puts blocks under you", Category.PLAYER);
     }
     @Subscribe public void onTick() {
         BlockPos pos = mc.player.blockPosition().below();

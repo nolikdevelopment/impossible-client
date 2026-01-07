@@ -10,7 +10,7 @@ import java.awt.*;
 
 public class FullBright extends Module {
     public FullBright() {
-        super("FullBright", "", Category.RENDER);
+        super("FullBright", "Provides maximum illumination", Category.RENDER);
     }
     @Subscribe public void onTick() {
         if (!mc.player.hasEffect(MobEffects.NIGHT_VISION)) {

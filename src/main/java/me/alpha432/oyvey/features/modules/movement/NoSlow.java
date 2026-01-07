@@ -6,7 +6,7 @@ import me.alpha432.oyvey.features.modules.Module;
 
 public class NoSlow extends Module {
     public NoSlow() {
-        super("NoSlow", "", Category.MOVEMENT);
+        super("NoSlow", "Prevents braking on blocks", Category.MOVEMENT);
     }
     @Subscribe public void onTick(SlowEvent event) {
        event.cancel();

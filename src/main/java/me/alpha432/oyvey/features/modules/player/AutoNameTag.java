@@ -4,6 +4,6 @@ import me.alpha432.oyvey.features.modules.Module;
 
 public class AutoNameTag extends Module {
     public AutoNameTag() {
-        super("AutoNameTag", "", Category.PLAYER);
+        super("AutoNameTag", "", Category.PLAYER);//Это не работает!!!
     }
 }

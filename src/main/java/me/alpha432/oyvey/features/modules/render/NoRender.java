@@ -5,6 +5,6 @@ import me.alpha432.oyvey.features.modules.Module;
 
 public class NoRender extends Module {
     public NoRender() {
-        super("NoRender", "", Category.RENDER);
+        super("NoRender", "Disables rendering of certain elements", Category.RENDER);
     }
 }

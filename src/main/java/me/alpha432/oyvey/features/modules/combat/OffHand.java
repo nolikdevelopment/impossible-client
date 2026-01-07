@@ -10,7 +10,7 @@ import net.minecraft.world.item.Items;
 // TODO: дописать
 public class OffHand extends Module {
     public OffHand() {
-        super("OffHand", "", Category.COMBAT);
+        super("OffHand", "Automatically places a specific item in your second hand", Category.COMBAT);
     }
 
     @Subscribe

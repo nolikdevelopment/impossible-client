@@ -6,7 +6,7 @@ import me.alpha432.oyvey.util.player.PlayerUtil;
 
 public class Sprint extends Module {
     public Sprint() {
-        super("Sprint", "", Category.MOVEMENT);
+        super("Sprint", "Automatic sprint", Category.MOVEMENT);
     }
     @Subscribe public void onTick() {
         if (!PlayerUtil.isSprinting() || !PlayerUtil.isUsingItem() || !PlayerUtil.isSneaking()) {

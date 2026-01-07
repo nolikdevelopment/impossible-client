@@ -10,7 +10,7 @@ public class AntiSpam extends Module {
             "hhtps:", ".ru", ".com", ".net", ".me", ".org", ".xyz"
     };
     public AntiSpam() {
-        super("AntiSpam", "", Category.MISC);
+        super("AntiSpam", "Just anti spam", Category.MISC);
     }
     @Subscribe public void onPacket(PacketEvent.Receive event) {
         if (event.getPacket() instanceof ServerboundChatPacket packet) {

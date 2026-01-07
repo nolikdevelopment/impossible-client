@@ -7,7 +7,7 @@ import net.minecraft.client.gui.screens.DeathScreen;
 
 public class AutoRespawn extends Module {
     public AutoRespawn() {
-        super("AutoRespawn", "", Category.MISC);
+        super("AutoRespawn", "Automatic respawn", Category.MISC);
     }
     @Subscribe public void onTick() {
             if (PlayerUtil.isDead()) {

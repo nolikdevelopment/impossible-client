@@ -6,7 +6,7 @@ import me.alpha432.oyvey.features.modules.Module;
 
 public class AutoWalk extends Module {
     public AutoWalk() {
-        super("AutoWalk", "", Category.MOVEMENT);
+        super("AutoWalk", "Automatic walking", Category.MOVEMENT);
     }
     @Subscribe public void onTick() {
         if (!mc.options.keyUp.isDown()) {

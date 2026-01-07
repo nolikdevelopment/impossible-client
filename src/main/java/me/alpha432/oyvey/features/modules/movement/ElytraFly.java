@@ -15,7 +15,7 @@ public class ElytraFly extends Module {
         Control
     }
     public ElytraFly() {
-        super("ElytraFly", "", Category.MOVEMENT);
+        super("ElytraFly", "Elytra fly...", Category.MOVEMENT);
     }
     @Subscribe public void onTick() {
         switch (mode.getValue()) {

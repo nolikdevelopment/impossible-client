@@ -24,7 +24,7 @@ public class ESP extends Module {
     public Setting<Float> lineWidth = register(new Setting<>("LineWidth", 2.0f, 0.1f, 5.0f));
     
     public ESP() {
-        super("ESP", "", Category.RENDER);
+        super("ESP", "Translucent entities", Category.RENDER);
     }
 
      @Subscribe

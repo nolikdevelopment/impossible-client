@@ -8,7 +8,7 @@ import net.minecraft.world.entity.boss.enderdragon.EndCrystal;
 
 public class HitSound extends Module {
     public HitSound() {
-        super("HitSound", "", Category.COMBAT);
+        super("HitSound", "Sets the hit sound.", Category.COMBAT);
     }
     @Subscribe public void onHit(HitEvent event) {
        if (event.getPlayer() == mc.player) {

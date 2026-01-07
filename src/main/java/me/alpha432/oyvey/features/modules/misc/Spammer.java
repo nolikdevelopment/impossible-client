@@ -1,7 +1,5 @@
 package me.alpha432.oyvey.features.modules.misc;
 
-
-import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.commands.Command;
 import me.alpha432.oyvey.features.modules.Module;
@@ -16,15 +14,14 @@ import java.nio.file.Paths;
 
 public class Spammer extends Module {
     public Setting<Integer> delayPerTick = num("Delay", 20, 1, 500);
-    public Setting<Boolean> isFile = bool("IsFile", false);
-    public Setting<String> text = str("Text", Impossible.CLIENT_NAME + " ON TOP!");//default
+    public Setting<String> fileName = str("Filename", "spammer.txt");
     public Setting<Boolean> antiSpam = bool("AntiSpam", false);
 
     private int timer = 0;
     private String messageToSend = "";
 
     public Spammer() {
-        super("Spammer", "", Category.MISC);
+        super("Spammer", "Spamming messages in the chat.", Category.MISC);
     }
 
     @Override
@@ -61,19 +58,13 @@ public class Spammer extends Module {
     }
 
     private void prepareMessage() {
-        if (!isFile.getValue()) {
-            this.messageToSend = text.getValue();
-            Command.sendMessage("{green}Spammer успешно включен в режиме текста");
-            return;
-        }
-
         try {
             File folder = new File("oyvey", "spammer");
             if (!folder.exists()) {
                 folder.mkdirs();
             }
 
-            Path path = Paths.get("oyvey/spammer/" + text.getValue());
+            Path path = Paths.get("oyvey/spammer/" + fileName.getValue());
             if (!Files.exists(path)) {
                 Command.sendMessage("{red}Файл " + path.toString() + " не найден!");
                 disable();

@@ -7,7 +7,7 @@ import net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket;
 
 public class AntiHunger extends Module {
     public AntiHunger() {
-        super("AntiHunger", "", Category.MISC);
+        super("AntiHunger", "Partially prevents loss of hunger", Category.MISC);
     }
     @Subscribe public void onPacket(PacketEvent.Send event) {
         if (event.getPacket() instanceof ServerboundPlayerCommandPacket packet) {

@@ -9,7 +9,7 @@ import me.alpha432.oyvey.util.player.PlayerUtil;
 public class FastFall extends Module {
     private boolean returnTimers = true;
     public FastFall() {
-        super("FastFall", "", Category.MOVEMENT);
+        super("FastFall", "Acceleration of player fall", Category.MOVEMENT);
     }
     @Subscribe public void onTick() {
         if (checkPos()) {

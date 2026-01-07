@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.fog.FogRenderer;
 
 public class Flight extends Module {
     public Flight() {
-        super("Flight", "", Category.MOVEMENT);
+        super("Flight", "Flight...", Category.MOVEMENT);
     }
 
     @Subscribe

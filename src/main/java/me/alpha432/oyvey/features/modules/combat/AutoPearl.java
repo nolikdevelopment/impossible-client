@@ -8,7 +8,7 @@ import net.minecraft.world.item.Items;
 // TODO: салосвич
 public class AutoPearl extends Module {
     public AutoPearl() {
-        super("AutoPearl", "", Category.COMBAT);
+        super("AutoPearl", "Automatically throws ender pearls", Category.COMBAT);
     }
     @Subscribe public void onTick() {
         if (PlayerUtil.getWeaponOffhand().getItem().equals(Items.ENDER_PEARL)) {

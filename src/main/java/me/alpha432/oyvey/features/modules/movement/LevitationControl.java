@@ -6,7 +6,7 @@ import net.minecraft.world.effect.MobEffects;
 
 public class LevitationControl extends Module {
     public LevitationControl() {
-        super("LevitationControl", "", Category.MOVEMENT);
+        super("LevitationControl", "Improved shulker levitation controls", Category.MOVEMENT);
     }
     @Subscribe public void onTick() {
         if (mc.player.hasEffect(MobEffects.LEVITATION)) {

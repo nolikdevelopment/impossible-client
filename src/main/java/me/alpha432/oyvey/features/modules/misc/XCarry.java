@@ -7,7 +7,7 @@ import net.minecraft.network.protocol.game.ServerboundContainerClosePacket;
 
 public class XCarry extends Module {
     public XCarry() {
-        super("XCarry", "", Category.MISC);
+        super("XCarry", "Allows you to store items in all slots", Category.MISC);
     }
     @Subscribe public void onPacket(PacketEvent.Send event) {
         if (event.getPacket() instanceof ServerboundContainerClosePacket packet) {

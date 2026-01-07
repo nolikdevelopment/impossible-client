@@ -6,12 +6,10 @@ import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.features.modules.misc.AntiLiquid;
 import me.alpha432.oyvey.features.modules.movement.NoSlow;
 import me.alpha432.oyvey.features.modules.player.HighJump;
-import me.alpha432.oyvey.features.modules.player.Velocity;
 import me.alpha432.oyvey.features.modules.render.NoRender;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.material.PushReaction;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -22,9 +20,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MixinEntity {
     @ModifyReturnValue(method = "getBlockJumpFactor", at = @At("RETURN"))
     private float aVoid(float original) {
-        HighJump highJump = Impossible.moduleManager.getModuleByClass(HighJump.class);
-        if (highJump.isEnabled()) {
-            return original + highJump.height.getValue();
+        HighJump hightJump = Impossible.moduleManager.getModuleByClass(HighJump.class);
+        if (hightJump.isEnabled()) {
+            return original + hightJump.height.getValue();
         }
         return original;
     }

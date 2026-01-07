@@ -6,7 +6,7 @@ import me.alpha432.oyvey.mixin.IMixin.ILivingEntity;
 
 public class NoJumpDelay extends Module {
     public NoJumpDelay() {
-        super("NoJumpDelay", "", Category.PLAYER);
+        super("NoJumpDelay", "Removes the delay between jumps", Category.PLAYER);
     }
     @Subscribe public void onTick() {
         if (mc.options.keyJump.isDown()) {

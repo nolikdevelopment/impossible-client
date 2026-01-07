@@ -5,7 +5,7 @@ import me.alpha432.oyvey.features.modules.Module;
 
 public class CoordinateLogger extends Module {
     public CoordinateLogger() {
-        super("CoordinateLogger", "", Category.MISC);
+        super("CoordinateLogger", "Stores death coordinates", Category.MISC);
     }
     @Subscribe public void onTick() {
         if (mc.player.isDeadOrDying()) {

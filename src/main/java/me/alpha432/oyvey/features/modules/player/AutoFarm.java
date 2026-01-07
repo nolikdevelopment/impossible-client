@@ -19,7 +19,7 @@ public class AutoFarm extends Module {
     public Setting<Boolean> gryaka = bool("BreakGryadka", false);
 
     public AutoFarm() {
-        super("AutoFarm", "", Category.PLAYER);
+        super("AutoFarm", "Automatic planting", Category.PLAYER);
     }
 
     @Subscribe

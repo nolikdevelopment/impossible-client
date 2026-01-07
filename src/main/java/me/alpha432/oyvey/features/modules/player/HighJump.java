@@ -7,6 +7,6 @@ public class HighJump extends Module {
     public Setting<Integer> height = num("Height", 1, 1, 10);
 
     public HighJump() {
-        super("HighJump", "", Category.PLAYER);
+        super("HightJump", "", Category.PLAYER);
     }
 }

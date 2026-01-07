@@ -14,7 +14,7 @@ public class AutoSign extends Module {
     private String[] strings;
 
     public AutoSign() {
-        super("AutoSign", "", Category.MISC);
+        super("AutoSign", "Automatically signs signs", Category.MISC);
     }
 
     @Subscribe

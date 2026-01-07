@@ -5,7 +5,7 @@ import me.alpha432.oyvey.features.modules.Module;
 
 public class AntiLiquid extends Module {
     public AntiLiquid() {
-        super("AntiLiquid", "", Category.MISC);
+        super("AntiLiquid", "Prevents liquid repulsion", Category.MISC);
     }
     @Subscribe public void onTick() {
         if (mc.player.isInLiquid()) {

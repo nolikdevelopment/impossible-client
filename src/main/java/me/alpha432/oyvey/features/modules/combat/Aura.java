@@ -14,7 +14,7 @@ import net.minecraft.world.entity.player.Player;
 public class Aura extends Module {
     private Timer timer = new Timer();
     public Aura() {
-        super("Aura", "", Category.COMBAT);
+        super("Aura", "Kill aura", Category.COMBAT);
     }
     @Subscribe public void onTick() {
         for (Entity entity : mc.level.entitiesForRendering()) {
