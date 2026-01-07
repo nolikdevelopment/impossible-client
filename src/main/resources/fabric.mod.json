@@ -1,30 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "oyvey",
+  "id": "impossibleclient",
   "version": "${version}",
-  "name": "oyvey-ported",
-  "description": "free and opensource client base",
+  "name": "impossible",
+  "description": "impossible on top!",
   "authors": [
-    "3arthqu4ke",
-    "alpha432",
-    "cattyn"
+    "nolikdevelopment"
   ],
   "contact": {
-    "repo": "https://github.com/mioclient/oyvey-ported"
+    "repo": "https://github.com/nolikdevelopment/impossible-client"
   },
   "license": "MIT",
   "environment": "client",
-  "accessWidener": "oyvey.accesswidener",
+  "accessWidener": "impossible.accesswidener",
   "entrypoints": {
     "client": [
-      "me.alpha432.oyvey.Impossible"
+      "me.nolikdevelopment.impossibleclient.Impossible"
     ],
     "main": [
-      "me.alpha432.oyvey.Impossible"
+      "me.nolikdevelopment.impossibleclient.Impossible"
     ]
   },
   "mixins": [
-    "oyvey.mixins.json"
+    "impossible.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",

@@ -1,0 +1,33 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.nolikdevelopment.impossibleclient.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "MixinClientPlayerEntity",
+    "MixinClientPlayNetworkHandler",
+    "MixinInGameHud",
+    "MixinKeyboard",
+    "MixinMouse",
+    "MixinRenderTickCounter",
+    "MixinWorldRenderer",
+    "MixinTitleScreen",
+    "IMixin.ILivingEntity",
+    "MixinEntity",
+    "MixinGameRenderer",
+    "MixinPlayerEntity",
+    "MixinGui",
+    "MixinScreenEffectRenderer",
+    "MixinScreen",
+    "MixinLivingEntityRenderer",
+    "MixinSweetBerryBushBlock",
+    "MixinClientPlayerInteractionManager",
+    "MixinClientLevel",
+    "MixinMinecraft",
+    "IMixin.IAbstractSignEditScreen"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
