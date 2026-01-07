@@ -1,7 +1,5 @@
 package me.alpha432.oyvey.features.modules.misc;
 
-
-import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.commands.Command;
 import me.alpha432.oyvey.features.modules.Module;
