@@ -29,6 +29,8 @@ public class Impossible implements ModInitializer, ClientModInitializer {
     public static ConfigManager configManager;
     public static HudEditorScreen hudEditorScreen;
 
+    public static boolean playSound = false;
+
     @Override
     public void onInitialize() {
         eventManager = new EventManager();
