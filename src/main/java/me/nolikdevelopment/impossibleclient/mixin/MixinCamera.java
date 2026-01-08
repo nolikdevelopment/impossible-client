@@ -2,25 +2,20 @@ package me.nolikdevelopment.impossibleclient.mixin;
 
 import me.nolikdevelopment.impossibleclient.Impossible;
 import me.nolikdevelopment.impossibleclient.features.modules.render.ViewClip;
+import me.nolikdevelopment.impossibleclient.util.traits.Util;
 import net.minecraft.client.Camera;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Camera.class)
-public abstract class MixinCamera {
-    @Shadow
-    protected abstract float getMaxZoom(float f);
-
-    @Redirect(method = "setup", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Camera;getMaxZoom(F)F"))
-    private float redirectGetMaxZoom(Camera instance, float distance) {
+public class MixinCamera implements Util {
+    @Inject(method = "getMaxZoom", at = @At("HEAD"), cancellable = true)
+    private void aVoid(float f, CallbackInfoReturnable<Float> cir) {
         ViewClip viewClip = Impossible.moduleManager.getModuleByClass(ViewClip.class);
-
-        if (viewClip != null && viewClip.isEnabled()) {
-            return distance;
+        if (viewClip.isEnabled()) {
+            cir.setReturnValue(5f);
         }
-
-        return this.getMaxZoom(distance);
     }
 }

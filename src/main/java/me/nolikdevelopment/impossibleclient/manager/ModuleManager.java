@@ -39,7 +39,6 @@ public class ModuleManager implements Jsonable, Util {
         register(new Notifications());
         register(new Criticals());
         register(new MCF());
-        register(new ChatPrefix());
         register(new Step());
         register(new FastFall());
         register(new FastPlace());
