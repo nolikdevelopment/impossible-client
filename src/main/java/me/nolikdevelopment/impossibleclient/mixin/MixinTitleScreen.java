@@ -20,9 +20,9 @@ public class MixinTitleScreen {
     }
     @Inject(method = "init", at = @At("HEAD"))
     private void aVoid(CallbackInfo ci) {
-        if (!Impossible.playSound) {
-            mc.getSoundManager().play(SimpleSoundInstance.forMusic(SoundEvents.EXPERIENCE_ORB_PICKUP, 1f));
-            Impossible.playSound = true;
-        }
+            if (!Impossible.playSound) {
+                mc.getSoundManager().play(SimpleSoundInstance.forMusic(SoundEvents.EXPERIENCE_ORB_PICKUP, 1f));
+                Impossible.playSound = true;
+            }
     }
 }

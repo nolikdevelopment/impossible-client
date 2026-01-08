@@ -25,7 +25,8 @@
     "MixinClientPlayerInteractionManager",
     "MixinClientLevel",
     "MixinMinecraft",
-    "IMixin.IAbstractSignEditScreen"
+    "IMixin.IAbstractSignEditScreen",
+    "MixinWindow"
   ],
   "injectors": {
     "defaultRequire": 1
