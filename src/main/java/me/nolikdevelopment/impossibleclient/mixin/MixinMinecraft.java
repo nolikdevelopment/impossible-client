@@ -37,7 +37,7 @@ public class MixinMinecraft implements Util {
     }
     // TODO: для себя ( мультитаск )
     @ModifyExpressionValue(method = "handleKeybinds", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;isUsingItem()Z"))
-    private boolean aVoid(boolean original) {
+    private boolean aVoid1(boolean original) {
         MultiTask multiTask = Impossible.moduleManager.getModuleByClass(MultiTask.class);
         if (multiTask.isEnabled()) {
             return false;
