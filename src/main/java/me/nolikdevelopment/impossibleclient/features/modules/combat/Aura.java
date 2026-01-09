@@ -37,7 +37,6 @@ public class Aura extends Module {
         if (timer.passedS(0.87)) {
             mc.gameMode.attack(mc.player, entity);
             Impossible.rotationManager.rotateToEntity(entity);
-            mc.player.swing(InteractionHand.MAIN_HAND);
             timer.reset();
         }
     }

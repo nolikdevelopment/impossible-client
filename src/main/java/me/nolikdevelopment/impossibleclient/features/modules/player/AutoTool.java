@@ -1,20 +1,23 @@
 package me.nolikdevelopment.impossibleclient.features.modules.player;
 
+import me.nolikdevelopment.impossibleclient.event.system.Subscribe;
 import me.nolikdevelopment.impossibleclient.features.modules.Module;
 import me.nolikdevelopment.impossibleclient.util.traits.Util;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.EntityHitResult;
 
 public class AutoTool extends Module implements Util {
     public AutoTool() {
         super("AutoTool", "Automatically selecting tool for use.", Category.PLAYER);
     }
 
-    @Override
-    public void onTick() {
+    @Subscribe public void onTick() {
         if (mc.options.keyAttack.isDown()) {
+            if (mc.hitResult instanceof EntityHitResult) return;
+            if (mc.player.gameMode() != GameType.SURVIVAL) return;
+
             BlockHitResult hitResult = (BlockHitResult) mc.hitResult;
             BlockState state = mc.level.getBlockState(hitResult.getBlockPos());
 

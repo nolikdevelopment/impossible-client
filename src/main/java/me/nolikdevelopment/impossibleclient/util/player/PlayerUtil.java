@@ -58,4 +58,7 @@ public class PlayerUtil implements Util {
         mc.getConnection().send(new ServerboundUseItemPacket(hand, id, y, x));
         mc.player.swing(InteractionHand.MAIN_HAND);
     }
+    public static boolean isMoving() {
+        return mc.player.zza != 0 || mc.player.xxa != 0;
+    }
 }
