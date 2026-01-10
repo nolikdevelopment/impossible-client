@@ -82,6 +82,7 @@ public class ModuleManager implements Jsonable, Util {
         register(new Spammer());
         register(new AutoSign());
         register(new AutoTool());
+        register(new AutoBowRelease());
     }
 
     public void register(Module module) {
