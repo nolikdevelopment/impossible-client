@@ -9,7 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Impossible implements ModInitializer, ClientModInitializer {
-    public static final String VERSION = "v2 - 1.21.10 - 11/01/2026 0:05";
+    public static final String VERSION = "v2 - 1.21.10 - 12/01/2026 19:42";
     public static final String CLIENT_NAME = "Impossible Client";
     public static final String NAME = CLIENT_NAME + " " + VERSION;
     public static boolean playSound;
