@@ -6,9 +6,11 @@ import me.nolikdevelopment.impossibleclient.event.system.Subscribe;
 import me.nolikdevelopment.impossibleclient.features.modules.Module;
 import me.nolikdevelopment.impossibleclient.features.settings.Setting;
 import me.nolikdevelopment.impossibleclient.util.models.Timer;
+import me.nolikdevelopment.impossibleclient.util.player.InventoryUtil;
 import me.nolikdevelopment.impossibleclient.util.player.PlayerUtil;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.item.Items;
 
 public class AutoFirework extends Module {
@@ -22,7 +24,7 @@ public class AutoFirework extends Module {
     @Subscribe public void onTick() {
         if (timer.passedS(delay.getValue())) {
             if (PlayerUtil.isGliding() || PlayerUtil.getArmorSlot(EquipmentSlot.CHEST, Items.ELYTRA) || !PlayerUtil.isUsingItem()) {
-                if (PlayerUtil.getWeaponOffhand().getItem() == Items.FIREWORK_ROCKET) {
+                if (InventoryUtil.findItem(Items.FIREWORK_ROCKET)) {
                     if (!PlayerUtil.onGround()) {
                         PlayerUtil.useItem(InteractionHand.MAIN_HAND, 0, mc.player.getYRot(), mc.player.getXRot());
                         timer.reset();

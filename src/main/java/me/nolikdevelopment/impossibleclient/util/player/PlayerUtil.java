@@ -1,5 +1,6 @@
 package me.nolikdevelopment.impossibleclient.util.player;
 
+import me.nolikdevelopment.impossibleclient.mixin.MixinPlayerEntity;
 import me.nolikdevelopment.impossibleclient.util.traits.Util;
 import net.minecraft.network.protocol.game.ServerboundUseItemPacket;
 import net.minecraft.world.InteractionHand;

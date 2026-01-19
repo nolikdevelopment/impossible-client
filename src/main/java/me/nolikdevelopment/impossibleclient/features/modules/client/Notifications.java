@@ -1,5 +1,6 @@
 package me.nolikdevelopment.impossibleclient.features.modules.client;
 
+import me.nolikdevelopment.impossibleclient.Impossible;
 import me.nolikdevelopment.impossibleclient.event.impl.ClientEvent;
 import me.nolikdevelopment.impossibleclient.event.system.Subscribe;
 import me.nolikdevelopment.impossibleclient.features.modules.Module;
@@ -17,7 +18,6 @@ public class Notifications extends Module {
     public void onClient(ClientEvent event) {
         if (event.getStage() == 2) return;
         if (event.getFeature() instanceof ClickGui) return;
-
         var name = event.getFeature().getName();
         var state = event.getStage() != 0;
         var message = TextUtil.getFormatter().format(MODULE_FORMAT, name, state);
