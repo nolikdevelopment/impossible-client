@@ -1,7 +1,6 @@
 package me.nolikdevelopment.impossibleclient.features.modules.movement;
 
-import com.mojang.datafixers.kinds.IdF;
-import me.nolikdevelopment.impossibleclient.Impossible;
+
 import me.nolikdevelopment.impossibleclient.event.system.Subscribe;
 import me.nolikdevelopment.impossibleclient.features.modules.Module;
 import me.nolikdevelopment.impossibleclient.features.settings.Setting;
@@ -10,7 +9,7 @@ import me.nolikdevelopment.impossibleclient.util.player.InventoryUtil;
 import me.nolikdevelopment.impossibleclient.util.player.PlayerUtil;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LightningBolt;
+
 import net.minecraft.world.item.Items;
 
 public class AutoFirework extends Module {

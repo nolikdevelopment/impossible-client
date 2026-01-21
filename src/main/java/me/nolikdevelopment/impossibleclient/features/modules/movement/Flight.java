@@ -3,6 +3,7 @@ package me.nolikdevelopment.impossibleclient.features.modules.movement;
 import me.nolikdevelopment.impossibleclient.event.system.Subscribe;
 import me.nolikdevelopment.impossibleclient.features.modules.Module;
 import me.nolikdevelopment.impossibleclient.util.MathUtil;
+import net.minecraft.world.phys.Vec3;
 
 public class Flight extends Module {
     public Flight() {
@@ -12,14 +13,14 @@ public class Flight extends Module {
     @Subscribe
     public void onTick() {
         if (mc.options.keyJump.isDown()) {
-            mc.player.setDeltaMovement(mc.player.getDeltaMovement().x,1, mc.player.getDeltaMovement().z);
+            mc.player.setDeltaMovement(new Vec3(0, 1, 0));
         } else if (mc.options.keyShift.isDown()) {
-            mc.player.setDeltaMovement(mc.player.getDeltaMovement().x, -1, mc.player.getDeltaMovement().z);
+            mc.player.setDeltaMovement(new Vec3(0, -1, 0));
         } else {
-            mc.player.setDeltaMovement(mc.player.getDeltaMovement().x, -1, mc.player.getDeltaMovement().z);
+            mc.player.setDeltaMovement(new Vec3(0, -0, 0));
         }
-        double speed[] = MathUtil.directionSpeed(3);
-        mc.player.setDeltaMovement(speed[0], mc.player.getDeltaMovement().y, speed[1]);
+        double speed[] = MathUtil.directionSpeed(1);
+        mc.player.setDeltaMovement(new Vec3(speed[0], mc.player.getDeltaMovement().y, speed[1]));
     }
 }
 

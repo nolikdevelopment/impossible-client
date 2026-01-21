@@ -2,7 +2,9 @@ package me.nolikdevelopment.impossibleclient.util.player;
 
 import me.nolikdevelopment.impossibleclient.util.traits.Util;
 import net.minecraft.world.inventory.ClickType;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 
 // TODO: добавить разных методов
@@ -25,6 +27,14 @@ public class InventoryUtil implements Util {
     public static boolean findItem(Item item) {
         for (int i = 0; i < 9; i++) {
             if (!(PlayerUtil.getWeaponOffhand().getItem() == item)) {
+                swap(i);
+            }
+        }
+        return false;
+    }
+    public static boolean isBlocksInventory() {
+        for (int i = 0; i < 9; i++) {
+            if (mc.player.getInventory().getItem(i).getItem() instanceof BlockItem) {
                 swap(i);
             }
         }
