@@ -9,8 +9,6 @@ public class TestModule extends Module {
         super("TestModule", "", Category.COMBAT);
     }
     @Subscribe public void onTick() {
-        if (InventoryUtil.isBlocksInventory()) {
-
-        }
+        InventoryUtil.setSlot(4);
     }
 }

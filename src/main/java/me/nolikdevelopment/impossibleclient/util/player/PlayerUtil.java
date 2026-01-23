@@ -38,7 +38,7 @@ public class PlayerUtil implements Util {
         return mc.player.getWeaponItem();
     }
     public static boolean getFallDistance(float distance) {
-        return mc.player.fallDistance > distance;
+        return mc.player.fallDistance >= distance;
     }
     public static boolean onGround() {
         return mc.player.onGround();
@@ -64,5 +64,8 @@ public class PlayerUtil implements Util {
     }
     public static Entity isVehicle() {
         return mc.player.getVehicle();
+    }
+    public static boolean isVertical() {
+        return mc.player.verticalCollision;
     }
 }

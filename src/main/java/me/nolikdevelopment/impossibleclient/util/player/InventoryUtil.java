@@ -1,6 +1,7 @@
 package me.nolikdevelopment.impossibleclient.util.player;
 
 import me.nolikdevelopment.impossibleclient.util.traits.Util;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -39,5 +40,10 @@ public class InventoryUtil implements Util {
             }
         }
         return false;
+    }
+    public static void setSlot(int slot) {
+        for (int i = 0; i < 9; i++) {
+            mc.player.getInventory().setSelectedSlot(slot);
+        }
     }
 }
