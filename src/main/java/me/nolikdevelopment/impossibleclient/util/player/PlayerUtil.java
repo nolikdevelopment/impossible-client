@@ -62,7 +62,7 @@ public class PlayerUtil implements Util {
         mc.player.swing(InteractionHand.MAIN_HAND);
     }
     public static boolean isMoving() {
-        return mc.player.zza != 0 || mc.player.xxa != 0;
+        return mc.player.zza > 0;
     }
     public static Entity isVehicle() {
         return mc.player.getVehicle();
