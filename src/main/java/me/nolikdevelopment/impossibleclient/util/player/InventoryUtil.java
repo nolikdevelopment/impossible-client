@@ -1,10 +1,12 @@
 package me.nolikdevelopment.impossibleclient.util.player;
 
 import me.nolikdevelopment.impossibleclient.util.traits.Util;
+import net.minecraft.core.HolderSet;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 
 

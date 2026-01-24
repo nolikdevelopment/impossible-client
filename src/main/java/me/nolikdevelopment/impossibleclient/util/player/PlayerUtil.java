@@ -2,12 +2,14 @@ package me.nolikdevelopment.impossibleclient.util.player;
 
 import me.nolikdevelopment.impossibleclient.mixin.MixinPlayerEntity;
 import me.nolikdevelopment.impossibleclient.util.traits.Util;
+import net.minecraft.client.model.PlayerModel;
 import net.minecraft.network.protocol.game.ServerboundUseItemPacket;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 public class PlayerUtil implements Util {
     public static boolean isDead() {
