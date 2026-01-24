@@ -29,7 +29,8 @@
     "IMixin.IAbstractSignEditScreen",
     "MixinWindow",
     "MixinFogRenderer",
-    "MixinLightTexture"
+    "MixinLightTexture",
+    "MixinStringDecomposer"
   ],
   "injectors": {
     "defaultRequire": 1
