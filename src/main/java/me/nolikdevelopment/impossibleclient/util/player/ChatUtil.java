@@ -20,7 +20,6 @@ public class ChatUtil {
         if (Command.nullCheck()) {
             return;
         }
-        // TODO add silent support ig
         mc.gui.getChat().addMessage(message);
     }
     public static void sendChatMessage(String message) {

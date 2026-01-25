@@ -87,6 +87,8 @@ public class ModuleManager implements Jsonable, Util {
         register(new SafeWalk());
         register(new NameProtect());
         register(new GuiMove());
+        register(new Scaffold());
+        register(new AntiVoid());
     }
 
     public void register(Module module) {

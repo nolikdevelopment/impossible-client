@@ -10,7 +10,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 
 
-// TODO: добавить разных методов
+
 public class InventoryUtil implements Util {
     public static void click(int slot, int button, ClickType type) {
         int id = mc.player.containerMenu.containerId;
